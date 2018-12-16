@@ -9,6 +9,9 @@ class Alien(Sprite):
 		self.ai_settings = ai_settings
 		self.screen = screen
 
+		#Alien settings
+		self.alien_speed_factor = 1
+
 		#Load the alien image
 		self.image = pygame.image.load('images/alien.bmp')
 		self.rect = self.image.get_rect()
@@ -21,6 +24,9 @@ class Alien(Sprite):
 		self.x = float(self.rect.x)
 		self.y = float(self.rect.y)
 	
+	def update(self):
+		self.x += self.alien_speed_factor
+		self.rect.x = self.x
 
 	def blitme(self):
 		'''Draw the alien'''
